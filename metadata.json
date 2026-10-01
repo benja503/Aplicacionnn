@@ -1,0 +1,6 @@
+{
+  "name": "Plato Económico",
+  "description": "App para cocinar platos variados y económicos aprovechando los ingredientes del hogar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

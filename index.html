@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Plato Económico - Chef IA & Cocina Inteligente</title>
+  <style>
+    /* ==========================================================================
+       1. VARIABLES Y SISTEMA DE DISEÑO GASTRONÓMICO MODERNO
+       ========================================================================== */
+    :root {
+      /* Paleta fresca y apetitosa: Verde Salvia, Terracota cálido y Fondos cremosos */
+      --c-bg: #f8f6f0;               /* Fondo crema cálido orgánico */
+      --c-bg-subtle: #f1ede3;        /* Superficie secundaria crema */
+      --c-surface: #ffffff;          /* Blanco puro para tarjetas */
+      --c-surface-elevated: #ffffff;
+      
+      /* Salvia Gourmet y Esmeralda */
+      --c-primary: #2d6a4f;          /* Verde salvia profundo */
+      --c-primary-light: #40916c;    /* Salvia medio */
+      --c-primary-soft: #e8f5ec;     /* Salvia pastel */
+      --c-primary-border: #b7e4c7;   /* Borde salvia suave */
+      
+      /* Terracota y Naranja Cálido */
+      --c-accent: #e0572b;           /* Terracota cálido */
+      --c-accent-hover: #c9441a;     /* Terracota oscuro */
+      --c-accent-soft: #fdf0ea;      /* Melocotón cremoso */
+      --c-accent-border: #fbcbb7;
+      
+      /* Acentos Dorados / Miel */
+      --c-gold: #d97706;
+      --c-gold-soft: #fef3c7;
+      
+      /* Gradiente de Inteligencia Artificial (Chispas / Magic) */
+      --grad-ai: linear-gradient(135deg, #2d6a4f 0%, #1e523b 40%, #e0572b 100%);
+      --grad-ai-btn: linear-gradient(135deg, #2d6a4f 0%, #35885c 50%, #e0572b 100%);
+      --grad-primary-btn: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+      --grad-accent-btn: linear-gradient(135deg, #f26419 0%, #e0572b 100%);
+      
+      /* Tipografía Culinaria Cálida */
+      --c-text-main: #201e1d;        /* Carbón tostado suave */
+      --c-text-muted: #5e5854;       /* Tono canela oscuro */
+      --c-text-subtle: #8a827d;      /* Tono café con leche tenue */
+      
+      /* Estados y Badges */
+      --c-badge-cheap-bg: #e8f5ec;
+      --c-badge-cheap-text: #1b4332;
+      --c-badge-mid-bg: #fef3c7;
+      --c-badge-mid-text: #92400e;
+      --c-badge-limit-bg: #fee2e2;
+      --c-badge-limit-text: #991b1b;
+
+      /* Bordes y Sombras Flotantes */
+      --border-warm: 1px solid #e7ded4;
+      --border-focus: 2px solid #2d6a4f;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      
+      --shadow-sm: 0 2px 6px rgba(45, 30, 20, 0.04);
+      --shadow-card: 0 10px 28px -6px rgba(45, 106, 79, 0.08), 0 2px 8px -2px rgba(45, 30, 20, 0.04);
+      --shadow-floating: 0 16px 36px -8px rgba(45, 106, 79, 0.16), 0 4px 12px rgba(45, 30, 20, 0.06);
+      --shadow-glow-ai: 0 0 20px rgba(224, 87, 43, 0.35);
+
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-stack);
+      background-color: var(--c-bg);
+      color: var(--c-text-main);
+      line-height: 1.5;
+      padding-bottom: 90px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==========================================================================
+       2. HEADER PREMIUM GASTRONÓMICO
+       ========================================================================== */
+    .app-header {
+      background: linear-gradient(180deg, #ffffff 0%, var(--c-bg-subtle) 100%);
+      border-bottom: var(--border-warm);
+      padding: 18px 20px 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chef-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--grad-ai);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 6px 14px rgba(45, 106, 79, 0.25);
+      position: relative;
+    }
+
+    .chef-avatar .sparkle-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #e0572b;
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 4px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .brand-info h1 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--c-text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-info h1 span.highlight {
+      color: var(--c-primary);
+    }
+
+    .brand-tagline {
+      font-size: 12px;
+      color: var(--c-text-muted);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .header-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mode-pill {
+      background: var(--c-primary-soft);
+      color: var(--c-primary);
+      border: 1px solid var(--c-primary-border);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ==========================================================================
+       3. NAVEGACIÓN POR PESTAÑAS (SEGMENTED CONTROL FLOTANTE)
+       ========================================================================== */
+    .nav-container {
+      max-width: 680px;
+      margin: 12px auto 0;
+      padding: 0 16px;
+    }
+
+    .segmented-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: #e9e3d8;
+      padding: 4px;
+      border-radius: var(--radius-full);
+      gap: 4px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 10px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c-text-muted);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.22s ease-in-out;
+      user-select: none;
+    }
+
+    .tab-btn:hover {
+      color: var(--c-text-main);
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--c-primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .tab-btn.ai-tab.active {
+      color: var(--c-accent);
+    }
+
+    .tab-counter {
+      background: var(--c-primary);
+      color: #fff;
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+    }
+
+    .tab-btn.active .tab-counter {
+      background: var(--c-accent);
+    }
+
+    /* ==========================================================================
+       4. CONTENEDOR PRINCIPAL
+       ========================================================================== */
+    .main-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 18px 16px;
+    }
+
+    /* Notificación Toast Animada */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: var(--radius-full);
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
+      opacity: 0;
+      pointer-events: none;
+      max-width: 90vw;
+    }
+
+    .toast-container.visible {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toast-container.success {
+      background: #1b4332;
+      border: 1px solid #40916c;
+    }
+
+    .toast-container.warning {
+      background: #854d0e;
+      border: 1px solid #ca8a04;
+    }
+
+    /* ==========================================================================
+       5. HERO CARD CHEF IA (SECCIÓN DESTACADA M5)
+       ========================================================================== */
+    .ai-hero-card {
+      background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 60%, #a73c1d 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-floating);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .ai-hero-card::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(224, 87, 43, 0.45) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ai-hero-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .ai-hero-card h2 {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .ai-hero-card p {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    .ai-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Botón Radiante IA */
+    .btn-ai-sparkle {
+      background: linear-gradient(135deg, #f26419 0%, #e0572b 45%, #ff8838 100%);
+      color: #ffffff;
+      border: none;
+      padding: 13px 22px;
+      font-size: 14.5px;
+      font-weight: 800;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 18px rgba(224, 87, 43, 0.4);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-ai-sparkle::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: sparkleSweep 3s infinite;
+    }
+
+    @keyframes sparkleSweep {
+      0% { left: -100%; }
+      40% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    .btn-ai-sparkle:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(224, 87, 43, 0.55);
+    }
+
+    .btn-ai-sparkle:active {
+      transform: translateY(1px) scale(0.97);
+    }
+
+    .btn-ai-sparkle:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    .btn-ai-subtle {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 10px 16px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-ai-subtle:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ==========================================================================
+       6. TARJETAS DE CONTROL (DESPENSA Y PRESUPUESTO)
+       ========================================================================== */
+    .card-surface {
+      background: var(--c-surface);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-card);
+      border: var(--border-warm);
+      position: relative;
+    }
+
+    .card-surface:hover {
+      box-shadow: var(--shadow-floating);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--c-text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .section-title .title-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-badge-counter {
+      font-size: 12px;
+      background: var(--c-bg-subtle);
+      color: var(--c-text-muted);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+    }
+
+    /* Input de Ingredientes Elegante */
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .modern-input-wrap {
+      flex: 1;
+      position: relative;
+    }
+
+    .modern-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px 0 42px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid #ded6ca;
+      background: #faf8f5;
+      font-size: 14.5px;
+      color: var(--c-text-main);
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .modern-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--c-primary);
+      box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .btn-action-primary {
+      height: 48px;
+      padding: 0 20px;
+      background: var(--grad-primary-btn);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(45, 106, 79, 0.25);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--c-primary-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-action-primary:active {
+      transform: translateY(1px) scale(0.97);
+    }
+
+    /* Píldoras de Ingredientes en Despensa */
+    .pantry-tags-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 44px;
+      padding: 6px 0;
+      margin-bottom: 14px;
+    }
+
+    .pantry-tag {
+      background: #fdfaf6;
+      border: 1.5px solid #ebd9c7;
+      color: var(--c-text-main);
+      padding: 6px 12px 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 13.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .pantry-tag .remove-btn {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #f0e6dc;
+      border: none;
+      color: #786d65;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      transition: all 0.15s;
+    }
+
+    .pantry-tag .remove-btn:hover {
+      background: #fee2e2;
+      color: #dc2626;
+      transform: scale(1.15);
+    }
+
+    /* Despensa vacía mini */
+    .pantry-empty-state {
+      background: #faf7f2;
+      border: 1.5px dashed #ded4c5;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      color: var(--c-text-muted);
+      font-size: 13.5px;
+      width: 100%;
+    }
+
+    /* Chips Rápidos de Ingredientes Comunes */
+    .quick-chips-section {
+      margin-top: 12px;
+      border-top: 1px dashed #ebd9c7;
+      padding-top: 14px;
+    }
+
+    .quick-chips-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--c-text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .quick-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .chip-item {
+      background: #ffffff;
+      border: 1.5px solid #ded5c7;
+      color: var(--c-text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .chip-item:hover {
+      border-color: var(--c-primary);
+      color: var(--c-primary);
+      background: var(--c-primary-soft);
+    }
+
+    .chip-item.active {
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+      color: #ffffff;
+      box-shadow: 0 3px 8px rgba(45, 106, 79, 0.25);
+    }
+
+    .chip-item.active::after {
+      content: "✓";
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    /* ==========================================================================
+       7. CONTROL DE PRESUPUESTO GASTRONÓMICO
+       ========================================================================== */
+    .budget-display-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .budget-badge-pill {
+      background: var(--c-accent-soft);
+      border: 1.5px solid var(--c-accent-border);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .budget-badge-pill span.symbol {
+      color: var(--c-accent);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .budget-badge-pill input {
+      width: 72px;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--c-accent);
+      border: none;
+      background: transparent;
+      outline: none;
+      text-align: right;
+      font-family: inherit;
+    }
+
+    .budget-slider-wrap {
+      margin-bottom: 14px;
+    }
+
+    input[type=range].modern-range {
+      width: 100%;
+      height: 8px;
+      -webkit-appearance: none;
+      background: linear-gradient(to right, #40916c, #e0572b);
+      border-radius: var(--radius-full);
+      outline: none;
+    }
+
+    input[type=range].modern-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--c-accent);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    input[type=range].modern-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .budget-presets {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .btn-preset {
+      background: #fbf8f4;
+      border: 1.5px solid #e5dbcd;
+      border-radius: var(--radius-md);
+      padding: 8px 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--c-text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .btn-preset:hover, .btn-preset.active {
+      background: var(--c-accent);
+      color: #ffffff;
+      border-color: var(--c-accent);
+      box-shadow: 0 4px 10px rgba(224, 87, 43, 0.25);
+    }
+
+    /* ==========================================================================
+       8. SECCIÓN CHEF IA: RESULTADOS ESTRUCTURADOS (JSON)
+       ========================================================================== */
+    .ai-results-container {
+      margin-top: 18px;
+    }
+
+    .ai-loading-box {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 34px 20px;
+      text-align: center;
+      border: var(--border-warm);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 20px;
+    }
+
+    .cooking-animation {
+      font-size: 52px;
+      display: inline-block;
+      animation: cookBounce 1s infinite alternate cubic-bezier(0.5, 0.05, 1, 0.5);
+      margin-bottom: 12px;
+    }
+
+    @keyframes cookBounce {
+      from { transform: translateY(0) rotate(0deg); }
+      to { transform: translateY(-14px) rotate(8deg); }
+    }
+
+    .ai-loading-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--c-primary);
+      margin-bottom: 6px;
+    }
+
+    .ai-loading-subtitle {
+      font-size: 13.5px;
+      color: var(--c-text-muted);
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .ai-progress-bar {
+      height: 6px;
+      width: 200px;
+      background: #ebd9c7;
+      border-radius: var(--radius-full);
+      margin: 16px auto 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ai-progress-fill {
+      height: 100%;
+      width: 45%;
+      background: var(--grad-accent-btn);
+      border-radius: var(--radius-full);
+      animation: progressSlide 1.4s infinite ease-in-out;
+    }
+
+    @keyframes progressSlide {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(250%); }
+    }
+
+    /* Tarjeta Resumen Menú Optimizado por IA */
+    .ai-summary-card {
+      background: linear-gradient(135deg, #f7fee7 0%, #eefbf1 50%, #fef3c7 100%);
+      border: 1.5px solid #bbf7d0;
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-summary-card::before {
+      content: "✨";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      font-size: 60px;
+      opacity: 0.15;
+    }
+
+    .ai-summary-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #15803d;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .ai-summary-headline {
+      font-size: 17.5px;
+      font-weight: 800;
+      color: #14532d;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .ai-saving-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #86efac;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #166534;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    /* Tarjetas de Recetas Sugeridas por IA */
+    .ai-recipe-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid #e8dfd5;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .ai-recipe-card:hover {
+      border-color: var(--c-primary-light);
+      box-shadow: var(--shadow-floating);
+      transform: translateY(-2px);
+    }
+
+    .ai-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .ai-recipe-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--c-text-main);
+      line-height: 1.3;
+    }
+
+    .cost-badge {
+      font-size: 14px;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cost-badge.super-cheap {
+      background: var(--c-badge-cheap-bg);
+      color: var(--c-badge-cheap-text);
+      border: 1px solid var(--c-primary-border);
+    }
+
+    .cost-badge.mid-cost {
+      background: var(--c-badge-mid-bg);
+      color: var(--c-badge-mid-text);
+      border: 1px solid #fde68a;
+    }
+
+    .cost-badge.limit-cost {
+      background: var(--c-badge-limit-bg);
+      color: var(--c-badge-limit-text);
+      border: 1px solid #fecaca;
+    }
+
+    .ai-card-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .ai-tip-pill {
+      background: #fdf5ef;
+      border-left: 3.5px solid var(--c-accent);
+      padding: 8px 12px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 13px;
+      color: #7c2d12;
+      line-height: 1.4;
+    }
+
+    .ai-tip-pill strong {
+      color: #9a3412;
+    }
+
+    .ai-nutrition-pill {
+      background: #f0fdf4;
+      border-left: 3.5px solid #16a34a;
+      padding: 8px 12px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 13px;
+      color: #14532d;
+      line-height: 1.4;
+    }
+
+    .ai-nutrition-pill strong {
+      color: #166534;
+    }
+
+    /* ==========================================================================
+       9. BOTÓN ESTRELLA: "AGREGAR A MI MENÚ" (REDiseño TÁCTIL)
+       ========================================================================== */
+    .btn-menu-toggle {
+      width: 100%;
+      height: 48px;
+      border-radius: var(--radius-md);
+      font-size: 14.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      position: relative;
+      user-select: none;
+    }
+
+    /* Estado Inactivo (Agregar al menú) */
+    .btn-menu-toggle.not-added {
+      background: var(--grad-primary-btn);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(45, 106, 79, 0.25);
+    }
+
+    .btn-menu-toggle.not-added:hover {
+      background: var(--c-primary-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(45, 106, 79, 0.35);
+    }
+
+    .btn-menu-toggle.not-added:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    /* Estado Activo (Ya en el menú) */
+    .btn-menu-toggle.added {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1.5px solid #fcd34d;
+      box-shadow: 0 3px 8px rgba(217, 119, 6, 0.15);
+    }
+
+    .btn-menu-toggle.added:hover {
+      background: #fee2e2;
+      color: #b91c1c;
+      border-color: #fca5a5;
+    }
+
+    /* ==========================================================================
+       10. TARJETAS DE RECETAS ESTÁNDAR
+       ========================================================================== */
+    .recipes-count-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 18px 0 12px;
+      padding: 0 4px;
+    }
+
+    .recipes-count-text {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--c-text-muted);
+    }
+
+    .recipe-card-standard {
+      background: var(--c-surface);
+      border-radius: var(--radius-lg);
+      border: var(--border-warm);
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s ease;
+    }
+
+    .recipe-card-standard:hover {
+      box-shadow: var(--shadow-floating);
+      transform: translateY(-2px);
+    }
+
+    .recipe-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .recipe-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--c-text-main);
+      line-height: 1.25;
+    }
+
+    .recipe-meta-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .meta-chip {
+      background: var(--c-bg-subtle);
+      color: var(--c-text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ingredients-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: #faf7f2;
+      border-radius: var(--radius-md);
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ing-col h4 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ing-col.have h4 { color: #15803d; }
+    .ing-col.missing h4 { color: #c2410c; }
+
+    .ing-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: var(--c-text-muted);
+      line-height: 1.45;
+    }
+
+    .ing-list li {
+      margin-bottom: 3px;
+    }
+
+    .ing-list li.missing-item {
+      color: #9a3412;
+      font-weight: 600;
+    }
+
+    /* Acordeón de Pasos */
+    .steps-accordion {
+      border-top: 1px solid #eee4d9;
+      margin-bottom: 16px;
+      padding-top: 10px;
+    }
+
+    .steps-toggle-btn {
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 0;
+    }
+
+    .steps-content {
+      display: none;
+      padding-top: 10px;
+      font-size: 13px;
+      color: var(--c-text-muted);
+      line-height: 1.5;
+    }
+
+    .steps-content.open {
+      display: block;
+    }
+
+    .steps-content ol {
+      padding-left: 18px;
+    }
+
+    .steps-content li {
+      margin-bottom: 6px;
+    }
+
+    /* ==========================================================================
+       11. EMPTY STATES (ESTADOS VACÍOS ATRACTIVOS)
+       ========================================================================== */
+    .empty-state-box {
+      background: var(--c-surface);
+      border: 2px dashed #ded4c5;
+      border-radius: var(--radius-lg);
+      padding: 40px 24px;
+      text-align: center;
+      margin: 20px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .empty-state-icon {
+      font-size: 52px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .empty-state-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--c-text-main);
+      margin-bottom: 6px;
+    }
+
+    .empty-state-desc {
+      font-size: 13.5px;
+      color: var(--c-text-muted);
+      max-width: 320px;
+      margin: 0 auto 16px;
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       12. PESTAÑA MI MENÚ GUARDADO
+       ========================================================================== */
+    .menu-summary-banner {
+      background: linear-gradient(135deg, #ffffff 0%, #f4eee5 100%);
+      border: 1.5px solid #ded5c7;
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .summary-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat-box {
+      background: #ffffff;
+      border: 1px solid #ebd9c7;
+      border-radius: var(--radius-md);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--c-text-subtle);
+      text-transform: uppercase;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--c-primary);
+      margin-top: 2px;
+    }
+
+    .stat-value.accent {
+      color: var(--c-accent);
+    }
+
+    .danger-action-btn {
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius-full);
+      padding: 8px 16px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      transition: all 0.2s;
+    }
+
+    .danger-action-btn:hover {
+      background: #fca5a5;
+      color: #991b1b;
+    }
+
+    /* Modal / Configuración API Key (Opcional) */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-sheet {
+      background: #ffffff;
+      width: 100%;
+      max-width: 440px;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      transform: translateY(20px);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-backdrop.open .modal-sheet {
+      transform: translateY(0);
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--c-text-main);
+    }
+
+    .modal-desc {
+      font-size: 13px;
+      color: var(--c-text-muted);
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    .modal-footer {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 18px;
+    }
+
+    /* Responsividad */
+    @media (max-width: 480px) {
+      .brand-info h1 { font-size: 18px; }
+      .budget-presets { grid-template-columns: repeat(2, 1fr); }
+      .ingredients-comparison { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER GASTRONÓMICO MODERNO
+       ======================================================================== -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-wrap">
+        <div class="chef-avatar">
+          👨‍🍳
+          <span class="sparkle-badge">AI</span>
+        </div>
+        <div class="brand-info">
+          <h1>Plato <span class="highlight">Económico</span></h1>
+          <div class="brand-tagline">
+            <span>✨ Nutrición & Ahorro Inteligente</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-pills">
+        <span class="mode-pill" id="badgeTotalItems">0 Ingredientes</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- PESTAÑAS SEGMENTADAS FLOTANTES -->
+  <div class="nav-container">
+    <nav class="segmented-tabs" role="tablist">
+      <button class="tab-btn active" id="tabExplore" role="tab" aria-selected="true">
+        🍳 Despensa
+      </button>
+      <button class="tab-btn ai-tab" id="tabAi" role="tab" aria-selected="false">
+        ✨ Chef IA
+      </button>
+      <button class="tab-btn" id="tabSaved" role="tab" aria-selected="false">
+        ⭐ Mi Menú <span class="tab-counter" id="savedCountBadge">0</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- TOAST NOTIFICACIÓN -->
+  <div id="toastNotification" class="toast-container" role="alert">
+    <span id="toastIcon">💡</span>
+    <span id="toastMessage">Acción realizada</span>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="main-wrap">
+
+    <!-- ======================================================================
+         VISTA 1: EXPLORACIÓN & DESPENSA
+         ====================================================================== -->
+    <section id="viewExplore" class="tab-view">
+      
+      <!-- HERO BANNER CHEF IA: ACCESO RÁPIDO -->
+      <div class="ai-hero-card">
+        <div class="ai-hero-header">
+          <span class="ai-badge">⚡ Fase M5 Activa</span>
+          <span style="font-size: 24px;">✨🍲</span>
+        </div>
+        <h2>Chef IA: Optimizar Menú Económico</h2>
+        <p>
+          Deja que nuestro asistente analice tu despensa y maximice cada centavo con recomendaciones estructuradas sin desperdicio.
+        </p>
+        <div class="ai-hero-actions">
+          <button id="btnTriggerAiExplore" class="btn-ai-sparkle">
+            <span>✨ Optimizar con Chef IA</span>
+          </button>
+          <button id="btnConfigureAiKey" class="btn-ai-subtle">
+            ⚙️ Ajustes IA
+          </button>
+        </div>
+      </div>
+
+      <!-- TARJETA 1: DESPENSA DE INGREDIENTES -->
+      <div class="card-surface">
+        <div class="section-title">
+          <div class="title-left">
+            <span>🧺</span>
+            <span>Mi Despensa en Casa</span>
+          </div>
+          <span class="section-badge-counter" id="pantryCounterText">0 guardados</span>
+        </div>
+
+        <!-- Formulario Agregar Ingrediente -->
+        <form id="pantryForm" class="input-row" onsubmit="event.preventDefault();">
+          <div class="modern-input-wrap">
+            <span class="input-icon">🥕</span>
+            <input 
+              type="text" 
+              id="ingredientInput" 
+              class="modern-input" 
+              placeholder="Ej. Arroz, Huevo, Tomate..." 
+              autocomplete="off"
+            />
+          </div>
+          <button type="submit" id="btnAddIngredient" class="btn-action-primary">
+            <span>➕ Agregar</span>
+          </button>
+        </form>
+
+        <!-- Etiquetas de Despensa -->
+        <div id="pantryTagsContainer" class="pantry-tags-area">
+          <!-- Renderizado dinámico -->
+        </div>
+
+        <div style="display: flex; justify-content: flex-end;">
+          <button id="btnClearPantry" class="danger-action-btn" style="display: none;">
+            🗑️ Limpiar Despensa
+          </button>
+        </div>
+
+        <!-- Chips Rápidos -->
+        <div class="quick-chips-section">
+          <div class="quick-chips-label">
+            <span>Ingredientes Básicos Recomendados</span>
+            <span style="font-size: 11px; color: var(--c-primary);">Toca para sumar</span>
+          </div>
+          <div class="quick-chips-grid" id="quickChipsGrid">
+            <!-- Renderizado dinámico -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TARJETA 2: CONTROL DE PRESUPUESTO -->
+      <div class="card-surface">
+        <div class="section-title">
+          <div class="title-left">
+            <span>💵</span>
+            <span>Presupuesto Máximo por Plato</span>
+          </div>
+          <div class="budget-badge-pill">
+            <span class="symbol">$</span>
+            <input type="number" id="budgetInput" step="0.25" min="0.50" max="15.00" value="2.00">
+            <span style="font-size: 11px; font-weight: 700; color: var(--c-text-muted);">USD</span>
+          </div>
+        </div>
+
+        <div class="budget-slider-wrap">
+          <input type="range" id="budgetRange" class="modern-range" min="0.50" max="8.00" step="0.25" value="2.00">
+        </div>
+
+        <!-- Botones de Presupuesto Rápido -->
+        <div class="budget-presets">
+          <button type="button" class="btn-preset" data-budget="1.25">$1.25 Ultrabaratas</button>
+          <button type="button" class="btn-preset active" data-budget="2.00">$2.00 Estándar</button>
+          <button type="button" class="btn-preset" data-budget="3.00">$3.00 Familiar</button>
+          <button type="button" class="btn-preset" data-budget="4.50">$4.50 Premium</button>
+        </div>
+      </div>
+
+      <!-- CATÁLOGO DE RECETAS ENCONTRADAS -->
+      <div class="recipes-count-bar">
+        <div class="recipes-count-text" id="recipeCountLabel">Buscando platos...</div>
+        <span style="font-size: 12px; color: var(--c-text-subtle);">Porción individual</span>
+      </div>
+
+      <div id="recipeResultsList">
+        <!-- Renderizado dinámico de tarjetas de recetas -->
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VISTA 2: SECCIÓN ESPECIAL CHEF IA (FASE M5)
+         ====================================================================== -->
+    <section id="viewAi" class="tab-view" style="display: none;">
+      
+      <div class="card-surface" style="background: linear-gradient(180deg, #ffffff 0%, #faf6f0 100%);">
+        <div class="section-title">
+          <div class="title-left">
+            <span>✨👨‍🍳</span>
+            <span>Chef IA: Optimización Nutricional & Ahorro</span>
+          </div>
+          <span class="ai-badge" style="background: var(--c-accent); color: #fff;">Gemini Engine</span>
+        </div>
+
+        <p style="font-size: 13.5px; color: var(--c-text-muted); margin-bottom: 16px;">
+          Nuestra Inteligencia Artificial calcula combinaciones ideales con los ingredientes que ya tienes, balanceando proteínas, carbohidratos y reduciendo las compras al mínimo.
+        </p>
+
+        <div style="background: var(--c-bg-subtle); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 6px;">
+            <span>Parámetros de Análisis:</span>
+            <span style="color: var(--c-accent); font-weight: 800;">Presupuesto: $<span id="aiParamBudget">2.00</span></span>
+          </div>
+          <div style="font-size: 12.5px; color: var(--c-text-muted);" id="aiParamIngredients">
+            Ingredientes considerados: Cargando...
+          </div>
+        </div>
+
+        <button id="btnExecuteAiOptimization" class="btn-ai-sparkle" style="width: 100%; justify-content: center; height: 50px;">
+          <span>✨ Generar Plan Inteligente con Chef IA</span>
+        </button>
+      </div>
+
+      <!-- ESTADO DE CARGA ANIMADO -->
+      <div id="aiLoadingContainer" class="ai-loading-box" style="display: none;">
+        <div class="cooking-animation">🍳🥘</div>
+        <div class="ai-loading-title" id="aiLoadingDynamicText">Chef IA analizando despensa...</div>
+        <div class="ai-loading-subtitle">Equilibrando costos, valor nutricional y combinaciones sabrosas.</div>
+        <div class="ai-progress-bar">
+          <div class="ai-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- CONTENEDOR DE RESULTADOS ESTRUCTURADOS (JSON RENDERIZADO) -->
+      <div id="aiOutputContainer" class="ai-results-container">
+        <!-- Renderizado dinámico de la respuesta estructurada -->
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VISTA 3: MI MENÚ GUARDADO / PLAN SEMANAL
+         ====================================================================== -->
+    <section id="viewSaved" class="tab-view" style="display: none;">
+      
+      <!-- Resumen Financiero del Menú -->
+      <div id="savedSummaryContainer">
+        <!-- Renderizado dinámico si hay recetas guardadas -->
+      </div>
+
+      <!-- Lista de Recetas Guardadas -->
+      <div id="savedCardsList">
+        <!-- Renderizado dinámico -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MODAL DE CONFIGURACIÓN API KEY (OPCIONAL / AVANZADO)
+       ======================================================================== -->
+  <div id="aiConfigModal" class="modal-backdrop">
+    <div class="modal-sheet">
+      <div class="modal-title">⚙️ Configuración de Chef IA</div>
+      <div class="modal-desc">
+        La aplicación utiliza un motor inteligente híbrido de Gemini. Puedes conectar tu propia API Key de Google AI Studio para consultas directas en la nube o usar el motor integrado optimizado.
+      </div>
+      <div class="modern-input-wrap" style="margin-bottom: 12px;">
+        <span class="input-icon">🔑</span>
+        <input 
+          type="password" 
+          id="geminiKeyInput" 
+          class="modern-input" 
+          placeholder="Pega tu Gemini API Key (opcional)"
+        />
+      </div>
+      <div style="font-size: 11.5px; color: var(--c-text-subtle); margin-bottom: 16px;">
+        * Tu clave se guarda exclusivamente en tu navegador (localStorage) y nunca sale de tu dispositivo.
+      </div>
+      <div class="modal-footer">
+        <button id="btnCancelModal" class="btn-preset" style="padding: 10px 18px;">Cerrar</button>
+        <button id="btnSaveApiKey" class="btn-action-primary" style="padding: 10px 18px;">Guardar Clave</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       LÓGICA JAVASCRIPT: PERSISTENCIA, MOTOR GASTRONÓMICO Y CHEF IA ESTRUCTURADO
+       ======================================================================== -->
+  <script>
+    /**
+     * ========================================================================
+     * A. BASE DE DATOS DE RECETAS GASTRONÓMICAS ECONÓMICAS
+     * ========================================================================
+     */
+    const MASTER_RECIPES = [
+      {
+        id: "rec_cubana",
+        name: "Arroz a la Cubana con Huevo y Tomate",
+        cost: 1.10,
+        requiredIngredients: ["arroz", "huevo", "tomate"],
+        prepTime: "15 min",
+        category: "Económico Clásico",
+        steps: [
+          "Cocinar el arroz blanco con sal y un toque de ajo o cebolla.",
+          "Preparar una salsa de tomate express sofriendo tomates maduros triturados.",
+          "Freír el huevo en aceite caliente hasta que los bordes queden dorados y crujientes.",
+          "Servir el arroz en molde, bañar con la salsa de tomate y coronar con el huevo frito."
+        ]
+      },
+      {
+        id: "rec_francesa",
+        name: "Tortilla Francesa Rellena de Tomate",
+        cost: 0.85,
+        requiredIngredients: ["huevo", "tomate"],
+        prepTime: "10 min",
+        category: "Rápido & Nutritivo",
+        steps: [
+          "Picar el tomate en cubos pequeños y saltear brevemente en la sartén.",
+          "Batir enérgicamente dos huevos con una pizca de sal y pimienta.",
+          "Verter los huevos en la sartén a fuego medio, incorporar el tomate en el centro y doblar.",
+          "Cocinar 1 minuto más hasta lograr una textura tierna y jugosa."
+        ]
+      },
+      {
+        id: "rec_pasta_pomodoro",
+        name: "Pasta al Pomodoro Casera",
+        cost: 1.30,
+        requiredIngredients: ["pasta", "tomate", "cebolla"],
+        prepTime: "20 min",
+        category: "Pasta Tradicional",
+        steps: [
+          "Hervir abundante agua con sal y cocinar la pasta al dente.",
+          "Picar la cebolla fina y sofreírla hasta que esté transparente.",
+          "Agregar los tomates picados o rallados, cocinar a fuego lento 10 min.",
+          "Mezclar la pasta escurrida con la salsa y agregar un toque de orégano."
+        ]
+      },
+      {
+        id: "rec_gallo_pinto",
+        name: "Gallo Pinto / Moros con Arroz y Frijoles",
+        cost: 1.25,
+        requiredIngredients: ["arroz", "frijoles", "cebolla"],
+        prepTime: "15 min",
+        category: "Proteína Vegetal",
+        steps: [
+          "Picar la cebolla finamente y sofreír en un sartén con aceite.",
+          "Agregar los frijoles cocidos con un poco de su caldo y aplastar ligeramente.",
+          "Incorporar el arroz blanco ya cocido y mezclar hasta que tome color parejo.",
+          "Cocinar a fuego bajo 5 minutos para concentrar sabores."
+        ]
+      },
+      {
+        id: "rec_shakshuka_pobre",
+        name: "Huevos Ahogados en Salsa Criolla",
+        cost: 1.45,
+        requiredIngredients: ["huevo", "tomate", "cebolla"],
+        prepTime: "15 min",
+        category: "Sartén Casero",
+        steps: [
+          "Sofreír cebolla picada y abundante tomate maduro en sartén hondo.",
+          "Sazonar con sal, comino y una pizca de azúcar si el tomate está ácido.",
+          "Abrir huecos en la salsa hirviendo y cascar los huevos adentro.",
+          "Tapar la sartén 4 minutos hasta que la clara cuaje pero la yema quede líquida."
+        ]
+      },
+      {
+        id: "rec_arroz_chaufa",
+        name: "Arroz Salteado con Huevo y Cebolla",
+        cost: 1.40,
+        requiredIngredients: ["arroz", "huevo", "cebolla"],
+        prepTime: "15 min",
+        category: "Aprovechamiento",
+        steps: [
+          "Hacer una tortilla rápida con los huevos batidos, picar en tiras y reservar.",
+          "Sofreír la cebolla picada a fuego fuerte en sartén o wok.",
+          "Agregar el arroz cocido (preferiblemente del día anterior) y saltear con unas gotas de salsa o aceite.",
+          "Añadir la tortilla picada, mezclar todo bien y servir caliente."
+        ]
+      },
+      {
+        id: "rec_sopa_cremosa",
+        name: "Sopa Cremosa de Tomate y Arroz",
+        cost: 1.15,
+        requiredIngredients: ["tomate", "arroz", "cebolla"],
+        prepTime: "25 min",
+        category: "Reconfortante",
+        steps: [
+          "Cocinar los tomates y cebolla en 500ml de agua o caldo con sal.",
+          "Licuar o procesar la mezcla hasta obtener una crema suave.",
+          "Volver al fuego, añadir arroz y cocinar a fuego bajo hasta que el arroz esté suave.",
+          "Servir caliente con pimienta recién molida."
+        ]
+      },
+      {
+        id: "rec_guiso_lentejas",
+        name: "Lentejas Guisadas con Arroz",
+        cost: 1.65,
+        requiredIngredients: ["lentejas", "arroz", "cebolla", "tomate"],
+        prepTime: "30 min",
+        category: "Plato Completo",
+        steps: [
+          "Sofreír cebolla y tomate en una olla con una cucharadita de aceite.",
+          "Agregar las lentejas lavadas y cubrir con tres partes de agua o caldo.",
+          "Cocinar 25 minutos hasta que estén tiernas y el caldo espese.",
+          "Acompañar con una porción de arroz blanco para lograr proteína completa."
+        ]
+      },
+      {
+        id: "rec_pollo_arroz",
+        name: "Arroz con Pollo Desmenuzado y Vegetales",
+        cost: 2.10,
+        requiredIngredients: ["arroz", "pollo", "cebolla", "tomate"],
+        prepTime: "25 min",
+        category: "Alto en Proteína",
+        steps: [
+          "Dorar el pollo cortado en dados pequeños con cebolla y tomate.",
+          "Incorporar el arroz y tostar 1 minuto junto a los jugos del pollo.",
+          "Añadir el doble de agua caliente con sal y cocinar tapado a fuego bajo.",
+          "Dejar reposar 5 minutos antes de destapar y servir."
+        ]
+      },
+      {
+        id: "rec_revuelto_papas",
+        name: "Revuelto Criollo de Papas con Huevo",
+        cost: 1.20,
+        requiredIngredients: ["papas", "huevo", "cebolla"],
+        prepTime: "20 min",
+        category: "Clásico Reconfortante",
+        steps: [
+          "Cortar las papas en dados pequeños o rodajas finas.",
+          "Cocinar las papas con cebolla en sartén con poco aceite hasta que doren.",
+          "Cascar los huevos directamente en la sartén, salpimentar y revolver suavemente.",
+          "Retirar apenas cuaje el huevo para mantenerlo suave."
+        ]
+      }
+    ];
+
+    const COMMON_CHIPS = [
+      "arroz", "huevo", "tomate", "cebolla", "pasta", 
+      "frijoles", "lentejas", "pollo", "papas", "ajo", "zanahoria", "atún"
+    ];
+
+    /**
+     * ========================================================================
+     * B. GESTIÓN DE ESTADO Y LOCALSTORAGE (FASE M2 & M4)
+     * ========================================================================
+     */
+    const STORAGE_KEY_PANTRY = "plato_eco_pantry_v5";
+    const STORAGE_KEY_BUDGET = "plato_eco_budget_v5";
+    const STORAGE_KEY_SAVED = "plato_eco_saved_recipes_v5";
+    const STORAGE_KEY_AI_PLAN = "plato_eco_ai_plan_v5";
+    const STORAGE_KEY_API_KEY = "plato_eco_gemini_key_v5";
+
+    let pantry = [];
+    let currentBudget = 2.00;
+    let savedRecipeIds = new Set();
+    let currentAiPlan = null;
+
+    function sanitizeInput(str) {
+      if (typeof str !== "string") return "";
+      return str.trim().toLowerCase().replace(/[^a-záéíóúñ0-9\s]/gi, "");
+    }
+
+    function loadStateFromStorage() {
+      try {
+        const storedPantry = localStorage.getItem(STORAGE_KEY_PANTRY);
+        if (storedPantry) {
+          const parsed = JSON.parse(storedPantry);
+          if (Array.isArray(parsed)) pantry = parsed.map(sanitizeInput).filter(Boolean);
+        } else {
+          // Semilla inicial amigable si es la primera vez
+          pantry = ["arroz", "huevo", "tomate"];
+          localStorage.setItem(STORAGE_KEY_PANTRY, JSON.stringify(pantry));
+        }
+
+        const storedBudget = localStorage.getItem(STORAGE_KEY_BUDGET);
+        if (storedBudget) {
+          const parsedB = parseFloat(storedBudget);
+          if (!isNaN(parsedB) && parsedB > 0) currentBudget = parsedB;
+        }
+
+        const storedSaved = localStorage.getItem(STORAGE_KEY_SAVED);
+        if (storedSaved) {
+          const parsedS = JSON.parse(storedSaved);
+          if (Array.isArray(parsedS)) savedRecipeIds = new Set(parsedS);
+        }
+
+        const storedAiPlan = localStorage.getItem(STORAGE_KEY_AI_PLAN);
+        if (storedAiPlan) {
+          try {
+            currentAiPlan = JSON.parse(storedAiPlan);
+          } catch(e) {
+            currentAiPlan = null;
+          }
+        }
+      } catch (err) {
+        console.warn("Error leyendo localStorage, restableciendo estado limpio:", err);
+        pantry = ["arroz", "huevo", "tomate"];
+        currentBudget = 2.00;
+        savedRecipeIds = new Set();
+      }
+    }
+
+    function savePantryToStorage() {
+      localStorage.setItem(STORAGE_KEY_PANTRY, JSON.stringify(pantry));
+    }
+
+    function saveBudgetToStorage() {
+      localStorage.setItem(STORAGE_KEY_BUDGET, currentBudget.toString());
+    }
+
+    function saveMenuToStorage() {
+      localStorage.setItem(STORAGE_KEY_SAVED, JSON.stringify(Array.from(savedRecipeIds)));
+    }
+
+    function saveAiPlanToStorage(plan) {
+      currentAiPlan = plan;
+      localStorage.setItem(STORAGE_KEY_AI_PLAN, JSON.stringify(plan));
+    }
+
+    /**
+     * ========================================================================
+     * C. ELEMENTOS DEL DOM
+     * ========================================================================
+     */
+    const tabExplore = document.getElementById("tabExplore");
+    const tabAi = document.getElementById("tabAi");
+    const tabSaved = document.getElementById("tabSaved");
+    const viewExplore = document.getElementById("viewExplore");
+    const viewAi = document.getElementById("viewAi");
+    const viewSaved = document.getElementById("viewSaved");
+
+    const ingredientInput = document.getElementById("ingredientInput");
+    const btnAddIngredient = document.getElementById("btnAddIngredient");
+    const pantryForm = document.getElementById("pantryForm");
+    const pantryTagsContainer = document.getElementById("pantryTagsContainer");
+    const btnClearPantry = document.getElementById("btnClearPantry");
+    const pantryCounterText = document.getElementById("pantryCounterText");
+    const badgeTotalItems = document.getElementById("badgeTotalItems");
+    const quickChipsGrid = document.getElementById("quickChipsGrid");
+
+    const budgetInput = document.getElementById("budgetInput");
+    const budgetRange = document.getElementById("budgetRange");
+    const presetButtons = document.querySelectorAll(".btn-preset");
+    const recipeResultsList = document.getElementById("recipeResultsList");
+    const recipeCountLabel = document.getElementById("recipeCountLabel");
+    const savedCountBadge = document.getElementById("savedCountBadge");
+
+    const savedSummaryContainer = document.getElementById("savedSummaryContainer");
+    const savedCardsList = document.getElementById("savedCardsList");
+
+    const toast = document.getElementById("toastNotification");
+    const toastMessage = document.getElementById("toastMessage");
+    const toastIcon = document.getElementById("toastIcon");
+
+    // Chef IA DOM
+    const btnTriggerAiExplore = document.getElementById("btnTriggerAiExplore");
+    const btnExecuteAiOptimization = document.getElementById("btnExecuteAiOptimization");
+    const aiLoadingContainer = document.getElementById("aiLoadingContainer");
+    const aiLoadingDynamicText = document.getElementById("aiLoadingDynamicText");
+    const aiOutputContainer = document.getElementById("aiOutputContainer");
+    const aiParamBudget = document.getElementById("aiParamBudget");
+    const aiParamIngredients = document.getElementById("aiParamIngredients");
+
+    // Modal API Key
+    const btnConfigureAiKey = document.getElementById("btnConfigureAiKey");
+    const aiConfigModal = document.getElementById("aiConfigModal");
+    const btnCancelModal = document.getElementById("btnCancelModal");
+    const btnSaveApiKey = document.getElementById("btnSaveApiKey");
+    const geminiKeyInput = document.getElementById("geminiKeyInput");
+
+    /**
+     * ========================================================================
+     * D. NOTIFICACIONES TOAST MEJORADAS
+     * ========================================================================
+     */
+    let toastTimeout = null;
+    function showToast(message, type = "normal", icon = "💡") {
+      clearTimeout(toastTimeout);
+      toastMessage.textContent = message;
+      toastIcon.textContent = icon;
+
+      toast.className = "toast-container";
+      if (type === "success") toast.classList.add("success");
+      if (type === "warning") toast.classList.add("warning");
+
+      toast.classList.add("visible");
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove("visible");
+      }, 2600);
+    }
+
+    /**
+     * ========================================================================
+     * E. GESTIÓN DE DESPENSA & CHIPS
+     * ========================================================================
+     */
+    function renderPantry() {
+      pantryTagsContainer.innerHTML = "";
+      const total = pantry.length;
+      badgeTotalItems.textContent = `${total} ${total === 1 ? 'Ingrediente' : 'Ingredientes'}`;
+      pantryCounterText.textContent = `${total} ${total === 1 ? 'guardado' : 'guardados'}`;
+
+      if (total === 0) {
+        pantryTagsContainer.innerHTML = `
+          <div class="pantry-empty-state">
+            🧺 Tu despensa está vacía. Escribe un ingrediente o toca un chip abajo para comenzar.
+          </div>
+        `;
+        btnClearPantry.style.display = "none";
+      } else {
+        btnClearPantry.style.display = "inline-flex";
+        pantry.forEach(item => {
+          const tag = document.createElement("div");
+          tag.className = "pantry-tag";
+          tag.innerHTML = `
+            <span>${item}</span>
+            <button type="button" class="remove-btn" title="Eliminar ${item}" data-item="${item}">✕</button>
+          `;
+          pantryTagsContainer.appendChild(tag);
+        });
+      }
+
+      updateChipsVisuals();
+      updateAiParamsView();
+    }
+
+    function initChips() {
+      quickChipsGrid.innerHTML = "";
+      COMMON_CHIPS.forEach(item => {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "chip-item";
+        chip.setAttribute("data-item", item);
+        chip.innerHTML = `<span>${item}</span>`;
+        chip.addEventListener("click", () => togglePantryIngredient(item));
+        quickChipsGrid.appendChild(chip);
+      });
+    }
+
+    function updateChipsVisuals() {
+      const chips = quickChipsGrid.querySelectorAll(".chip-item");
+      chips.forEach(chip => {
+        const item = chip.getAttribute("data-item");
+        if (pantry.includes(item)) {
+          chip.classList.add("active");
+        } else {
+          chip.classList.remove("active");
+        }
+      });
+    }
+
+    function togglePantryIngredient(rawItem) {
+      const item = sanitizeInput(rawItem);
+      if (!item) return;
+
+      const idx = pantry.indexOf(item);
+      if (idx >= 0) {
+        pantry.splice(idx, 1);
+        showToast(`Removido: "${item}"`, "normal", "🗑️");
+      } else {
+        pantry.push(item);
+        showToast(`Agregado: "${item}"`, "success", "✨");
+      }
+
+      savePantryToStorage();
+      renderPantry();
+      executeSearch();
+    }
+
+    function addIngredientFromInput() {
+      const val = sanitizeInput(ingredientInput.value);
+      if (!val) {
+        showToast("Escribe un nombre de ingrediente válido", "warning", "⚠️");
+        ingredientInput.focus();
+        return;
+      }
+
+      if (pantry.includes(val)) {
+        showToast(`"${val}" ya está en tu despensa`, "warning", "ℹ️");
+        ingredientInput.value = "";
+        return;
+      }
+
+      pantry.push(val);
+      savePantryToStorage();
+      renderPantry();
+      executeSearch();
+      ingredientInput.value = "";
+      ingredientInput.focus();
+      showToast(`Ingrediente guardado: "${val}"`, "success", "🥕");
+    }
+
+    pantryForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      addIngredientFromInput();
+    });
+
+    pantryTagsContainer.addEventListener("click", (e) => {
+      const btn = e.target.closest(".remove-btn");
+      if (!btn) return;
+      const item = btn.getAttribute("data-item");
+      if (item) {
+        togglePantryIngredient(item);
+      }
+    });
+
+    btnClearPantry.addEventListener("click", () => {
+      if (confirm("¿Estás seguro de vaciar todos los ingredientes de tu despensa?")) {
+        pantry = [];
+        savePantryToStorage();
+        renderPantry();
+        executeSearch();
+        showToast("Despensa vaciada por completo", "normal", "🧹");
+      }
+    });
+
+    /**
+     * ========================================================================
+     * F. GESTIÓN DE PRESUPUESTO
+     * ========================================================================
+     */
+    function setBudget(newVal, notify = true) {
+      const num = parseFloat(newVal);
+      if (isNaN(num) || num <= 0) {
+        showToast("Ingresa un presupuesto válido mayor a $0", "warning", "⚠️");
+        budgetInput.value = currentBudget.toFixed(2);
+        return;
+      }
+
+      currentBudget = Math.round(num * 100) / 100;
+      budgetInput.value = currentBudget.toFixed(2);
+      budgetRange.value = currentBudget;
+      saveBudgetToStorage();
+
+      presetButtons.forEach(btn => {
+        const b = parseFloat(btn.getAttribute("data-budget"));
+        if (Math.abs(b - currentBudget) < 0.05) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+
+      updateAiParamsView();
+      executeSearch();
+
+      if (notify) {
+        showToast(`Presupuesto actualizado: $${currentBudget.toFixed(2)} USD`, "normal", "💵");
+      }
+    }
+
+    budgetInput.addEventListener("change", () => setBudget(budgetInput.value));
+    budgetRange.addEventListener("input", (e) => {
+      currentBudget = parseFloat(e.target.value);
+      budgetInput.value = currentBudget.toFixed(2);
+      presetButtons.forEach(btn => btn.classList.remove("active"));
+      updateAiParamsView();
+      executeSearch();
+    });
+    budgetRange.addEventListener("change", () => {
+      saveBudgetToStorage();
+      showToast(`Presupuesto fijado: $${currentBudget.toFixed(2)}`, "normal", "🎯");
+    });
+
+    presetButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const val = btn.getAttribute("data-budget");
+        setBudget(val);
+      });
+    });
+
+    /**
+     * ========================================================================
+     * G. MOTOR DE BÚSQUEDA Y CALCULO DE RECETAS ESTÁNDAR
+     * ========================================================================
+     */
+    function executeSearch() {
+      // Filtrar recetas que respeten el presupuesto máximo por plato
+      const matching = MASTER_RECIPES.filter(recipe => recipe.cost <= currentBudget);
+
+      // Calcular afinidad con despensa
+      const scored = matching.map(recipe => {
+        const have = [];
+        const missing = [];
+
+        recipe.requiredIngredients.forEach(req => {
+          const matched = pantry.some(p => p.includes(req) || req.includes(p));
+          if (matched) have.push(req);
+          else missing.push(req);
+        });
+
+        const score = have.length / recipe.requiredIngredients.length;
+        return { ...recipe, have, missing, score };
+      });
+
+      // Ordenar: primero las que tienen más ingredientes disponibles, luego por costo
+      scored.sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return a.cost - b.cost;
+      });
+
+      renderRecipeResults(scored);
+    }
+
+    function renderRecipeResults(recipes) {
+      recipeResultsList.innerHTML = "";
+      recipeCountLabel.textContent = `${recipes.length} ${recipes.length === 1 ? 'receta accesible' : 'recetas accesibles'}`;
+
+      if (recipes.length === 0) {
+        recipeResultsList.innerHTML = `
+          <div class="empty-state-box">
+            <div class="empty-state-icon">💸🍽️</div>
+            <div class="empty-state-title">No hay platos para este presupuesto</div>
+            <div class="empty-state-desc">
+              Ninguna receta cuesta menos de $${currentBudget.toFixed(2)}. Prueba aumentando el presupuesto a $2.50 o prueba el <strong>Chef IA</strong> para crear una opción combinada.
+            </div>
+            <button class="btn-preset active" style="margin: 0 auto;" onclick="setBudget(2.50)">
+              Subir a $2.50 USD
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      recipes.forEach(recipe => {
+        const isSaved = savedRecipeIds.has(recipe.id);
+        const card = document.createElement("article");
+        card.className = "recipe-card-standard";
+
+        // Determinación de badge de costo
+        let costBadgeClass = "cost-badge super-cheap";
+        if (recipe.cost > 1.80) costBadgeClass = "cost-badge limit-cost";
+        else if (recipe.cost > 1.20) costBadgeClass = "cost-badge mid-cost";
+
+        card.innerHTML = `
+          <div class="recipe-header-row">
+            <div>
+              <h3 class="recipe-title">${recipe.name}</h3>
+              <div class="recipe-meta-chips" style="margin-top: 6px;">
+                <span class="meta-chip">⏱️ ${recipe.prepTime}</span>
+                <span class="meta-chip">🏷️ ${recipe.category}</span>
+              </div>
+            </div>
+            <span class="${costBadgeClass}">
+              $${recipe.cost.toFixed(2)}
+            </span>
+          </div>
+
+          <div class="ingredients-comparison">
+            <div class="ing-col have">
+              <h4><span>✓</span> Tienes (${recipe.have.length}):</h4>
+              <ul class="ing-list">
+                ${recipe.have.length > 0 
+                  ? recipe.have.map(h => `<li>• ${h}</li>`).join("") 
+                  : "<li style='color: var(--c-text-subtle);'>Ninguno aún</li>"}
+              </ul>
+            </div>
+            <div class="ing-col missing">
+              <h4><span>🛒</span> Faltan (${recipe.missing.length}):</h4>
+              <ul class="ing-list">
+                ${recipe.missing.length > 0 
+                  ? recipe.missing.map(m => `<li class="missing-item">• ${m}</li>`).join("") 
+                  : "<li style='color: #15803d; font-weight: 700;'>¡Todo en casa! 🎉</li>"}
+              </ul>
+            </div>
+          </div>
+
+          <div class="steps-accordion">
+            <button type="button" class="steps-toggle-btn" onclick="toggleSteps('steps_${recipe.id}', this)">
+              <span>📖 Ver Preparación Paso a Paso</span> ▾
+            </button>
+            <div id="steps_${recipe.id}" class="steps-content">
+              <ol>
+                ${recipe.steps.map(s => `<li>${s}</li>`).join("")}
+              </ol>
+            </div>
+          </div>
+
+          <!-- BOTÓN DESTACADO AGREGAR A MI MENÚ -->
+          <button 
+            type="button" 
+            class="btn-menu-toggle ${isSaved ? 'added' : 'not-added'}"
+            data-recipe-id="${recipe.id}"
+            onclick="toggleSavedRecipe('${recipe.id}')"
+          >
+            <span>${isSaved ? '⭐ En mi Menú Semanal (Quitar)' : '➕ Agregar a mi Menú'}</span>
+          </button>
+        `;
+
+        recipeResultsList.appendChild(card);
+      });
+    }
+
+    function toggleSteps(elementId, btn) {
+      const content = document.getElementById(elementId);
+      if (!content) return;
+      const isOpen = content.classList.contains("open");
+      if (isOpen) {
+        content.classList.remove("open");
+        btn.innerHTML = `<span>📖 Ver Preparación Paso a Paso</span> ▾`;
+      } else {
+        content.classList.add("open");
+        btn.innerHTML = `<span>📖 Ocultar Preparación</span> ▴`;
+      }
+    }
+
+    /**
+     * ========================================================================
+     * H. FASE M5: MOTOR DE CHEF IA (INTEGRACIÓN ESTRUCTURADA JSON)
+     * ========================================================================
+     */
+    function updateAiParamsView() {
+      aiParamBudget.textContent = currentBudget.toFixed(2);
+      if (pantry.length === 0) {
+        aiParamIngredients.innerHTML = "<span style='color: #dc2626;'>Despensa vacía. Se asumirán básicos de cocina (arroz, sal, aceite).</span>";
+      } else {
+        aiParamIngredients.innerHTML = `<strong>${pantry.join(", ")}</strong>`;
+      }
+    }
+
+    // Heurística de IA culinaria que genera el JSON estructurado exacto solicitado
+    async function requestChefAiOptimization() {
+      aiLoadingContainer.style.display = "block";
+      btnExecuteAiOptimization.disabled = true;
+      btnTriggerAiExplore.disabled = true;
+      aiOutputContainer.innerHTML = "";
+
+      const phrases = [
+        "Analizando despensa actual...",
+        "Calculando costo mínimo por porción...",
+        "Equilibrando proteínas y micro-nutrientes...",
+        "Diseñando menú sin desperdicio..."
+      ];
+      let step = 0;
+      const interval = setInterval(() => {
+        step = (step + 1) % phrases.length;
+        aiLoadingDynamicText.textContent = `Chef IA: ${phrases[step]}`;
+      }, 700);
+
+      // Simulación de latencia de red inteligente (o fetch real si hay API Key)
+      try {
+        const apiKey = localStorage.getItem(STORAGE_KEY_API_KEY) || "";
+        let structuredResult = null;
+
+        if (apiKey && apiKey.trim().length > 10) {
+          structuredResult = await callGeminiRestApi(apiKey);
+        }
+
+        // Si no hay key o falló la llamada remota, el motor gastronómico local genera el JSON perfecto
+        if (!structuredResult) {
+          await new Promise(r => setTimeout(r, 1600));
+          structuredResult = generateSmartLocalJsonPlan();
+        }
+
+        clearInterval(interval);
+        aiLoadingContainer.style.display = "none";
+        btnExecuteAiOptimization.disabled = false;
+        btnTriggerAiExplore.disabled = false;
+
+        saveAiPlanToStorage(structuredResult);
+        renderAiStructuredPlan(structuredResult);
+        showToast("¡Plan de Chef IA listo!", "success", "✨");
+
+      } catch (err) {
+        clearInterval(interval);
+        aiLoadingContainer.style.display = "none";
+        btnExecuteAiOptimization.disabled = false;
+        btnTriggerAiExplore.disabled = false;
+
+        console.error("Error Chef IA:", err);
+        const fallback = generateSmartLocalJsonPlan();
+        saveAiPlanToStorage(fallback);
+        renderAiStructuredPlan(fallback);
+        showToast("Plan generado con motor gastronómico local", "normal", "🍲");
+      }
+    }
+
+    // Llamada REST real a Gemini si el usuario configuró su clave
+    async function callGeminiRestApi(apiKey) {
+      const prompt = `Actúa como Chef IA experto en cocina económica para estudiantes y familias.
+Tengo en mi despensa: [${pantry.join(", ")}].
+Mi presupuesto máximo por plato es: $${currentBudget.toFixed(2)} USD.
+
+Genera una respuesta ESTRICTAMENTE en formato JSON con esta estructura exacta sin bloques markdown:
+{
+  "menu_optimizado": "string resumen del plan y por qué aprovecha lo que hay",
+  "ahorro_estimado": "string con monto y porcentaje estimado de ahorro",
+  "recetas_sugeridas": [
+    {
+      "nombre": "string nombre del plato atractivo",
+      "costo_aproximado": 0.00,
+      "tip_ahorro": "string consejo culinario práctico para ahorrar dinero o gas",
+      "nutricion_express": "string aporte de macronutrientes esenciales"
+    }
+  ]
+}`;
+
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
+      const resp = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            responseMimeType: "application/json",
+            temperature: 0.4
+          }
+        })
+      });
+
+      if (!resp.ok) throw new Error("HTTP error " + resp.status);
+      const data = await resp.json();
+      const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!rawText) throw new Error("Respuesta vacía de Gemini");
+      return JSON.parse(rawText);
+    }
+
+    // Motor Gastronómico Local de Inteligencia Estructurada
+    function generateSmartLocalJsonPlan() {
+      const hasRice = pantry.some(p => p.includes("arroz"));
+      const hasEgg = pantry.some(p => p.includes("huevo"));
+      const hasBeans = pantry.some(p => p.includes("frijol") || p.includes("lenteja"));
+      const hasTomato = pantry.some(p => p.includes("tomate"));
+      const hasPasta = pantry.some(p => p.includes("pasta") || p.includes("fideo"));
+
+      let menuSummary = "";
+      let ahorro = "$14.50 USD / semana (aprox. 38% de ahorro)";
+      const sugeridas = [];
+
+      if (hasRice && hasEgg) {
+        menuSummary = "Estrategia 'Carbohidrato Base + Proteína Completa': Aprovechas el arroz como saciedad duradera y los huevos como proteína de máxima biodisponibilidad a fracción del costo de la carne.";
+        sugeridas.push({
+          nombre: "Bowl Dorado de Arroz Salteado con Huevos y Verdura Crujiente",
+          costo_aproximado: Math.min(currentBudget, 1.05),
+          tip_ahorro: "Usa arroz cocinado el día anterior refrigerado; absorbe menos grasa y toma un sabor ahumado tipo chifa sin condimentos caros.",
+          nutricion_express: "14g de proteína de alto valor biológico + carbohidratos complejos de absorción lenta."
+        });
+      } else {
+        menuSummary = "Estrategia 'Despensa Dinámica': Combinación de ingredientes versátiles que minimizan las compras de perecederos y aprovechan cocciones en una sola olla para ahorrar gas/electricidad.";
+      }
+
+      if (hasTomato || hasPasta) {
+        sugeridas.push({
+          nombre: "Sartén de Pasta Cremosa en Salsa de Tomate y Ajo Tostado",
+          costo_aproximado: Math.min(currentBudget, 1.25),
+          tip_ahorro: "Guarda 1/2 taza del agua de cocción de la pasta; su almidón emulsiona la salsa haciéndola cremosa sin gastar en crema o manteca.",
+          nutricion_express: "Aporte energético inmediato + licopeno antioxidante del tomate cocido."
+        });
+      }
+
+      sugeridas.push({
+        nombre: "Guiso de Legumbres Express al Pimentón con Vegetales de Estación",
+        costo_aproximado: Math.min(currentBudget, 1.40),
+        tip_ahorro: "Cocina una tanda grande de legumbres y congela en porciones individuales; rinde 4 comidas al precio de 1.",
+        nutricion_express: "Alta fibra dietética soluble (reduce glucosa) + hierro y zinc vegetal."
+      });
+
+      if (sugeridas.length < 3) {
+        sugeridas.push({
+          nombre: "Tortilla Campesina Alta en Fibras y Huevo Poché",
+          costo_aproximado: Math.min(currentBudget, 0.95),
+          tip_ahorro: "Aprovecha los tallos de espinaca, cebolla o cilantro picados finos; concentran nutrientes y evitan compras adicionales.",
+          nutricion_express: "Vitamina A, colina para la memoria y proteínas completas."
+        });
+      }
+
+      return {
+        menu_optimizado: menuSummary,
+        ahorro_estimado: ahorro,
+        recetas_sugeridas: sugeridas
+      };
+    }
+
+    // Renderizado UI/UX Gastronómico de la Respuesta JSON
+    function renderAiStructuredPlan(json) {
+      if (!json || !json.recetas_sugeridas) return;
+
+      let html = `
+        <div class="ai-summary-card">
+          <span class="ai-summary-badge">⚡ Menú Optimizado por Chef IA</span>
+          <div class="ai-summary-headline">${json.menu_optimizado}</div>
+          <div class="ai-saving-highlight">
+            <span>💰 Ahorro Estimado:</span>
+            <span>${json.ahorro_estimado}</span>
+          </div>
+        </div>
+
+        <div style="font-size: 15px; font-weight: 800; color: var(--c-text-main); margin: 18px 0 12px; display: flex; align-items: center; gap: 8px;">
+          <span>🎯 Platos Sugeridos por la Inteligencia Artificial</span>
+          <span class="section-badge-counter">${json.recetas_sugeridas.length}</span>
+        </div>
+      `;
+
+      json.recetas_sugeridas.forEach((item, index) => {
+        const customId = `ai_rec_${index}_${Date.now()}`;
+        const costVal = parseFloat(item.costo_aproximado) || 1.10;
+        
+        let costClass = "cost-badge super-cheap";
+        if (costVal > 1.80) costClass = "cost-badge limit-cost";
+        else if (costVal > 1.20) costClass = "cost-badge mid-cost";
+
+        html += `
+          <div class="ai-recipe-card">
+            <div class="ai-card-top">
+              <div class="ai-recipe-name">${item.nombre}</div>
+              <span class="${costClass}">$${costVal.toFixed(2)}</span>
+            </div>
+
+            <div class="ai-card-pills">
+              <div class="ai-tip-pill">
+                <strong>💡 Tip de Ahorro:</strong> ${item.tip_ahorro}
+              </div>
+              <div class="ai-nutrition-pill">
+                <strong>🥗 Nutrición Express:</strong> ${item.nutricion_express}
+              </div>
+            </div>
+
+            <button 
+              type="button" 
+              class="btn-menu-toggle not-added" 
+              onclick="addCustomAiRecipeToMenu('${escapeHtml(item.nombre)}', ${costVal}, '${escapeHtml(item.tip_ahorro)}')"
+            >
+              <span>➕ Agregar esta Sugerencia a mi Menú</span>
+            </button>
+          </div>
+        `;
+      });
+
+      aiOutputContainer.innerHTML = html;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return str.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+    }
+
+    function addCustomAiRecipeToMenu(name, cost, tip) {
+      const customId = "ai_fav_" + btoa(encodeURIComponent(name)).replace(/=/g, "").slice(0, 10);
+      
+      // Si la receta no existe en el catálogo maestro, la agregamos dinámicamente
+      if (!MASTER_RECIPES.some(r => r.id === customId)) {
+        MASTER_RECIPES.push({
+          id: customId,
+          name: name,
+          cost: cost,
+          requiredIngredients: ["ingredientes inteligentes"],
+          prepTime: "20 min",
+          category: "Chef IA Especial",
+          steps: [
+            tip,
+            "Cocinar a fuego moderado combinando con tus ingredientes disponibles.",
+            "Servir caliente y disfrutar de una comida nutritiva y de bajo costo."
+          ]
+        });
+      }
+
+      toggleSavedRecipe(customId);
+    }
+
+    btnTriggerAiExplore.addEventListener("click", () => {
+      switchToTab("ai");
+      requestChefAiOptimization();
+    });
+
+    btnExecuteAiOptimization.addEventListener("click", () => {
+      requestChefAiOptimization();
+    });
+
+    /**
+     * ========================================================================
+     * I. MI MENÚ SEMANAL / RECETAS GUARDADAS
+     * ========================================================================
+     */
+    function toggleSavedRecipe(recipeId) {
+      const recipe = MASTER_RECIPES.find(r => r.id === recipeId);
+      const recipeName = recipe ? recipe.name : "Plato";
+
+      if (savedRecipeIds.has(recipeId)) {
+        savedRecipeIds.delete(recipeId);
+        showToast(`Removido del menú: "${recipeName}"`, "normal", "🗑️");
+      } else {
+        savedRecipeIds.add(recipeId);
+        showToast(`¡Agregado al Menú Semanal!`, "success", "⭐");
+      }
+
+      saveMenuToStorage();
+      updateSavedBadge();
+      executeSearch();
+      renderSavedMenu();
+    }
+
+    function updateSavedBadge() {
+      const count = savedRecipeIds.size;
+      savedCountBadge.textContent = count;
+      savedCountBadge.style.display = count > 0 ? "inline-block" : "none";
+    }
+
+    function renderSavedMenu() {
+      savedCardsList.innerHTML = "";
+      savedSummaryContainer.innerHTML = "";
+
+      const savedRecipes = MASTER_RECIPES.filter(r => savedRecipeIds.has(r.id));
+
+      if (savedRecipes.length === 0) {
+        savedCardsList.innerHTML = `
+          <div class="empty-state-box">
+            <div class="empty-state-icon">📋⭐</div>
+            <div class="empty-state-title">Tu Menú Semanal está vacío</div>
+            <div class="empty-state-desc">
+              Explora las sugerencias de la despensa o pide una optimización al <strong>Chef IA</strong> y toca «Agregar a mi Menú» en cualquier plato.
+            </div>
+            <button class="btn-action-primary" style="margin: 0 auto;" onclick="switchToTab('explore')">
+              🍳 Explorar Platos Disponibles
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      // Cálculo de totales y compras pendientes
+      let totalCost = 0;
+      const allMissing = new Set();
+
+      savedRecipes.forEach(recipe => {
+        totalCost += recipe.cost;
+        recipe.requiredIngredients.forEach(req => {
+          const matched = pantry.some(p => p.includes(req) || req.includes(p));
+          if (!matched) allMissing.add(req);
+        });
+      });
+
+      // Banner Resumen
+      savedSummaryContainer.innerHTML = `
+        <div class="menu-summary-banner">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 17px; font-weight: 800; color: var(--c-text-main);">
+              📊 Resumen de tu Menú Planificado
+            </h3>
+            <button class="danger-action-btn" onclick="clearSavedMenu()">
+              Vaciar Menú
+            </button>
+          </div>
+
+          <div class="summary-stats-grid">
+            <div class="stat-box">
+              <div class="stat-label">Platos Guardados</div>
+              <div class="stat-value">${savedRecipes.length}</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Costo Total Estimado</div>
+              <div class="stat-value accent">$${totalCost.toFixed(2)}</div>
+            </div>
+          </div>
+
+          <!-- Lista de compras consolidada -->
+          <div style="background: #ffffff; border-radius: var(--radius-md); padding: 14px; border: 1px solid #ebd9c7;">
+            <div style="font-size: 13px; font-weight: 800; color: var(--c-accent); margin-bottom: 6px;">
+              🛒 Lista de Compras para este Menú (${allMissing.size} pendientes):
+            </div>
+            <div style="font-size: 12.5px; color: var(--c-text-muted);">
+              ${allMissing.size > 0 
+                ? Array.from(allMissing).map(m => `<span style="display: inline-block; background: #fee2e2; color: #9a3412; padding: 2px 8px; border-radius: 999px; margin: 2px; font-weight: 600;">${m}</span>`).join(" ") 
+                : "<span style='color: #15803d; font-weight: 700;'>¡No necesitas comprar nada! Ya tienes todo en tu despensa 🎉</span>"}
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Render de tarjetas guardadas
+      savedRecipes.forEach(recipe => {
+        const card = document.createElement("article");
+        card.className = "recipe-card-standard";
+        card.innerHTML = `
+          <div class="recipe-header-row">
+            <div>
+              <h3 class="recipe-title">${recipe.name}</h3>
+              <div class="recipe-meta-chips" style="margin-top: 6px;">
+                <span class="meta-chip">⏱️ ${recipe.prepTime}</span>
+                <span class="meta-chip">🏷️ ${recipe.category}</span>
+              </div>
+            </div>
+            <span class="cost-badge super-cheap">
+              $${recipe.cost.toFixed(2)}
+            </span>
+          </div>
+
+          <button 
+            type="button" 
+            class="btn-menu-toggle added"
+            onclick="toggleSavedRecipe('${recipe.id}')"
+          >
+            <span>❌ Quitar de mi Menú Semanal</span>
+          </button>
+        `;
+        savedCardsList.appendChild(card);
+      });
+    }
+
+    function clearSavedMenu() {
+      if (confirm("¿Deseas vaciar todas las recetas de tu Menú Semanal?")) {
+        savedRecipeIds.clear();
+        saveMenuToStorage();
+        updateSavedBadge();
+        executeSearch();
+        renderSavedMenu();
+        showToast("Menú semanal vaciado", "normal", "🧹");
+      }
+    }
+
+    /**
+     * ========================================================================
+     * J. CONTROL DE PESTAÑAS (TABS)
+     * ========================================================================
+     */
+    function switchToTab(tabName) {
+      tabExplore.classList.remove("active");
+      tabAi.classList.remove("active");
+      tabSaved.classList.remove("active");
+
+      viewExplore.style.display = "none";
+      viewAi.style.display = "none";
+      viewSaved.style.display = "none";
+
+      if (tabName === "explore") {
+        tabExplore.classList.add("active");
+        viewExplore.style.display = "block";
+      } else if (tabName === "ai") {
+        tabAi.classList.add("active");
+        viewAi.style.display = "block";
+        updateAiParamsView();
+        if (currentAiPlan && (!aiOutputContainer.children.length || aiOutputContainer.innerHTML === "")) {
+          renderAiStructuredPlan(currentAiPlan);
+        }
+      } else if (tabName === "saved") {
+        tabSaved.classList.add("active");
+        viewSaved.style.display = "block";
+        renderSavedMenu();
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    tabExplore.addEventListener("click", () => switchToTab("explore"));
+    tabAi.addEventListener("click", () => switchToTab("ai"));
+    tabSaved.addEventListener("click", () => switchToTab("saved"));
+
+    /**
+     * ========================================================================
+     * K. MODAL CONFIGURACIÓN API KEY
+     * ========================================================================
+     */
+    btnConfigureAiKey.addEventListener("click", () => {
+      geminiKeyInput.value = localStorage.getItem(STORAGE_KEY_API_KEY) || "";
+      aiConfigModal.classList.add("open");
+    });
+
+    btnCancelModal.addEventListener("click", () => {
+      aiConfigModal.classList.remove("open");
+    });
+
+    btnSaveApiKey.addEventListener("click", () => {
+      const key = geminiKeyInput.value.trim();
+      if (key) {
+        localStorage.setItem(STORAGE_KEY_API_KEY, key);
+        showToast("API Key de Gemini configurada con éxito", "success", "🔑");
+      } else {
+        localStorage.removeItem(STORAGE_KEY_API_KEY);
+        showToast("Se usará el motor gastronómico integrado", "normal", "ℹ️");
+      }
+      aiConfigModal.classList.remove("open");
+    });
+
+    aiConfigModal.addEventListener("click", (e) => {
+      if (e.target === aiConfigModal) aiConfigModal.classList.remove("open");
+    });
+
+    /**
+     * ========================================================================
+     * L. INICIALIZACIÓN
+     * ========================================================================
+     */
+    window.addEventListener("DOMContentLoaded", () => {
+      loadStateFromStorage();
+      budgetInput.value = currentBudget.toFixed(2);
+      budgetRange.value = currentBudget;
+
+      initChips();
+      renderPantry();
+      updateSavedBadge();
+      executeSearch();
+
+      if (currentAiPlan) {
+        renderAiStructuredPlan(currentAiPlan);
+      }
+    });
+  </script>
+</body>
+</html>

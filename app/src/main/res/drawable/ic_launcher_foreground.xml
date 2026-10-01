@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:translateX="10.8"
+        android:translateY="10.8">
+        <!-- Plate Outer Rim -->
+        <path
+            android:fillColor="#E8F5E9"
+            android:pathData="M54,26 C38.5,26 26,38.5 26,54 C26,69.5 38.5,82 54,82 C69.5,82 82,69.5 82,54 C82,38.5 69.5,26 54,26 Z" />
+        <!-- Plate Inner Circle -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M54,32 C41.8,32 32,41.8 32,54 C32,66.2 41.8,76 54,76 C66.2,76 76,66.2 76,54 C76,41.8 66.2,32 54,32 Z" />
+        <!-- Cloche / Food Bowl / Steam -->
+        <path
+            android:fillColor="#40916C"
+            android:pathData="M38,55 C38,45 45,40 54,40 C63,40 70,45 70,55 L38,55 Z" />
+        <path
+            android:fillColor="#D8F3DC"
+            android:pathData="M51,36 A3,3 0 1,0 57,36 A3,3 0 1,0 51,36 Z" />
+        <!-- Dollar / Coin Accent (Plato Económico) -->
+        <path
+            android:fillColor="#FFB703"
+            android:pathData="M54,58 C49,58 45,61 45,65 C45,69 49,71 54,71 C59,71 63,69 63,65 C63,61 59,58 54,58 Z" />
+        <!-- Fork & Knife accents -->
+        <path
+            android:fillColor="#1B4332"
+            android:pathData="M53,60 L55,60 L55,68 L53,68 Z" />
+    </group>
+</vector>
